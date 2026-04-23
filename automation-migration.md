@@ -32,3 +32,9 @@
 * **工具：** Playwright Inspector, Trace Viewer
 
 [⬅️ 返回首頁](./)
+
+
+<style>
+  .btn { display: none !important; }            /* 隱藏頂部按鈕 */
+  .site-footer { display: none !important; }    /* 隱藏頁尾文字 */
+</style>

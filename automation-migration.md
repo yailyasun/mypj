@@ -10,10 +10,6 @@
   }
 </style>
 
-<div style="max-width: 800px; margin: 40px auto; ...">
-   ... 你的內容 ...
-</div>
-
 <div style="max-width: 800px; margin: 40px auto; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #24292e; line-height: 1.6;">
     
     <div style="background: #fff; padding: 40px; border-radius: 16px; border: 1px solid #e1e4e8; box-shadow: 0 12px 24px rgba(0,0,0,0.05);">
@@ -76,3 +72,5 @@
      </a>
     </div>
 </div>
+
+

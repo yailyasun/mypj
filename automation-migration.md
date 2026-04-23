@@ -2,10 +2,6 @@
     
     <div style="background: #fff; padding: 40px; border-radius: 16px; border: 1px solid #e1e4e8; box-shadow: 0 12px 24px rgba(0,0,0,0.05);">
         
-        <a href="./" style="display: inline-flex; align-items: center; padding: 8px 16px; background: #f6f8fa; color: #0366d6; text-decoration: none; border-radius: 6px; font-size: 14px; font-weight: 600; border: 1px solid #e1e4e8; margin-bottom: 30px; transition: 0.2s;">
-            ⬅️ 返回專案列表
-        </a>
-
         <header style="margin-bottom: 35px; border-bottom: 2px solid #f6f8fa; padding-bottom: 20px;">
             <h1 style="font-size: 32px; color: #1b1f23; margin: 0 0 10px 0;">🚀 自動化測試轉型：Selenium 遷移至 Playwright</h1>
             <div style="display: flex; gap: 10px; flex-wrap: wrap;">
@@ -58,6 +54,9 @@
         <footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #f6f8fa; text-align: right;">
             <span style="color: #6a737d; font-size: 13px;">Tools: Playwright Inspector, Trace Viewer, GitHub Actions</span>
         </footer>
-
+        
+  <a href="./" style="display: inline-flex; align-items: center; padding: 8px 16px; background: #f6f8fa; color: #0366d6; text-decoration: none; border-radius: 6px; font-size: 14px; font-weight: 600; border: 1px solid #e1e4e8; margin-bottom: 30px; transition: 0.2s;">
+            ⬅️ 返回首頁
+        </a>
     </div>
 </div>

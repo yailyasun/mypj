@@ -10,9 +10,6 @@
   }
 </style>
 
-<div style="max-width: 800px; margin: 40px auto; ...">
-   ... 你的內容 ...
-</div>
 <div style="max-width: 800px; margin: 40px auto; font-family: sans-serif; color: #333;">
     <div style="background: #fff; padding: 40px; border-radius: 15px; border: 1px solid #e1e4e8; box-shadow: 0 10px 25px rgba(0,0,0,0.05);">
         
@@ -45,3 +42,4 @@
 
     </div>
 </div>
+

@@ -18,3 +18,9 @@
 ### 🔹 [架構與工具研發：基於 SDD 的測試框架](./framework-sdd.md)
 *導入 Spec-Driven Development 概念，搭建高擴展性的測試底層。*
 
+<style>
+  /* 隱藏 header 中的所有按鈕 (View on GitHub / Download) */
+  .btn {
+    display: none !important;
+  }
+</style>

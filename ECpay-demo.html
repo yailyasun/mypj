@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="utf-8">
+    <title>金流自動化整合 - Helen's Portfolio</title>
+    <style>
+        body { 
+            margin: 0; padding: 0; background-color: #f8f9fa; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            line-height: 1.6; color: #24292e; 
+        }
+        .container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+        .card { 
+            background: #fff; padding: 40px; border-radius: 16px; 
+            border: 1px solid #e1e4e8; box-shadow: 0 12px 24px rgba(0,0,0,0.05); 
+        }
+        .btn-back {
+            display: inline-flex; align-items: center; padding: 8px 16px; 
+            background: #f6f8fa; color: #0366d6; text-decoration: none; 
+            border-radius: 6px; font-size: 14px; font-weight: 600; 
+            border: 1px solid #e1e4e8; margin-bottom: 30px;
+        }
+        header { margin-bottom: 35px; border-bottom: 2px solid #f6f8fa; padding-bottom: 20px; }
+        h1 { font-size: 32px; color: #1b1f23; margin: 0 0 10px 0; }
+        h2 { font-size: 20px; color: #24292e; border-left: 4px solid #b08d00; padding-left: 12px; margin: 30px 0 15px 0; }
+        .tag { background: #fff9e6; color: #b08d00; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-right: 5px; }
+        
+        /* 實作亮點區塊 */
+        .highlight-box {
+            background: #fffdf5; border: 1px solid #ffeeba; padding: 20px; border-radius: 10px; margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+      
+
+        <header>
+            <h1>💳 金流系統整合：ECPay 自動化支付驗證</h1>
+            <div>
+                <span class="tag">E2E Testing</span>
+                <span class="tag">Cross-Origin</span>
+                <span class="tag">Payment Gateway</span>
+                <span class="tag">Iframe Handling</span>
+            </div>
+        </header>
+
+        <section>
+            <h2>專案背景 (Situation)</h2>
+            <p style="color: #586069;">
+                系統整合第三方金流（綠界 ECPay）後，由於支付流程涉及外部跳轉與複雜的信用卡輸入欄位，人工回歸測試極為耗時且容易遺漏異常邊界情況。
+            </p>
+        </section>
+
+        <section>
+            <h2>技術難點與對策 (Challenges & Actions)</h2>
+            <div class="highlight-box">
+                <ul style="padding-left: 20px; margin: 0; color: #444;">
+                    <li style="margin-bottom: 12px;">
+                        <strong>跨域頁面定位：</strong> 支付頁面位於 ECPay 網域，利用 Playwright 的 <code>FrameLocator</code> 穩定定位 SDK 內嵌的信用卡輸入欄位。
+                    </li>
+                    <li style="margin-bottom: 12px;">
+                        <strong>動態導向驗證：</strong> 模擬從官網下單、跳轉至測試金流頁面、填寫卡號到最終導回成功頁面的完整閉環 (Closed-loop)。
+                    </li>
+                    <li style="margin-bottom: 12px;">
+                        <strong>測試資料隔離：</strong> 配合測試環境的 AppSettings 動態配置測試特店編號 (MerchantID)，確保自動化腳本不影響正式環境數據。
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>實作成果展示</h2>
+            <div style="display: flex; flex-direction: column; gap: 30px; align-items: center;">
+                
+                <div style="width: 100%; max-width: 700px; text-align: center;">
+                    <div style="border: 1px solid #e1e4e8; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05); background: #fff;">
+                        <img src="./ecpay-flow.png" alt="ECPay Testing Flow" style="width: 100%; height: auto; display: block;">
+                    </div>
+                    <p style="font-size: 13px; color: #6a737d; margin-top: 10px; font-style: italic;">
+                        💡 圖一：自動化腳本執行模擬支付流 (信用卡欄位已進行脫敏處理)
+                    </p>
+                </div>
+
+                <div style="height: 10px;"></div>
+
+                <div style="width: 100%; max-width: 700px; text-align: center;">
+                    <div style="border: 1px solid #e1e4e8; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05); background: #fff;">
+                        <img src="./payment-success.png" alt="Payment Success" style="width: 100%; height: auto; display: block;">
+                    </div>
+                    <p style="font-size: 13px; color: #6a737d; margin-top: 10px; font-style: italic;">
+                        💡 圖二：支付成功後的自動回傳與訂單狀態更新驗證
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>最終成效 (Result)</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px;">
+                <div style="padding: 15px; background: #fff; border: 1px solid #e1e4e8; border-radius: 8px; text-align: center;">
+                    <div style="font-size: 24px; font-weight: bold; color: #b08d00;">80%</div>
+                    <div style="font-size: 13px; color: #6a737d;">節省人工測試時間</div>
+                </div>
+                <div style="padding: 15px; background: #fff; border: 1px solid #e1e4e8; border-radius: 8px; text-align: center;">
+                    <div style="font-size: 24px; font-weight: bold; color: #b08d00;">100%</div>
+                    <div style="font-size: 13px; color: #6a737d;">金流主流程覆蓋率</div>
+                </div>
+            </div>
+        </section>
+
+      <br>
+        <a href="./" class="btn-back">⬅️ 返回首頁</a>
+
+    </div>
+</div>
+
+</body>
+</html>

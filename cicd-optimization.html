@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="utf-8">
+    <title>CI/CD 與流程優化 - Helen's Portfolio</title>
+    <style>
+        body { 
+            margin: 0; padding: 0; background-color: #f8f9fa; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            line-height: 1.6; color: #24292e; 
+        }
+        .container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+        .card { 
+            background: #fff; padding: 40px; border-radius: 16px; 
+            border: 1px solid #e1e4e8; box-shadow: 0 12px 24px rgba(0,0,0,0.05); 
+        }
+        .btn-back {
+            display: inline-flex; align-items: center; padding: 8px 16px; 
+            background: #f6f8fa; color: #0366d6; text-decoration: none; 
+            border-radius: 6px; font-size: 14px; font-weight: 600; 
+            border: 1px solid #e1e4e8; margin-bottom: 30px;
+        }
+        header { margin-bottom: 35px; border-bottom: 2px solid #f6f8fa; padding-bottom: 20px; }
+        h1 { font-size: 32px; color: #1b1f23; margin: 0 0 10px 0; }
+        h2 { font-size: 20px; color: #24292e; border-left: 4px solid #28a745; padding-left: 12px; margin: 30px 0 15px 0; }
+        .tag { background: #eefcf1; color: #28a745; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-right: 5px; }
+        
+        /* 流程圖樣式 */
+        .flow-container {
+            background: #f8f9fa; border: 1px solid #e1e4e8; border-radius: 8px;
+            padding: 20px; margin: 20px 0; display: flex; align-items: center; justify-content: space-around;
+        }
+        .flow-step {
+            background: white; border: 1px solid #28a745; padding: 10px; border-radius: 4px;
+            font-size: 13px; font-weight: bold; color: #28a745;
+        }
+        .flow-arrow { color: #999; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <a href="./" class="btn-back">⬅️ 返回首頁</a>
+
+        <header>
+            <h1>📊 CI/CD 與流程優化：GitLab 自動化整合</h1>
+            <div>
+                <span class="tag">GitLab CI/CD</span>
+                <span class="tag">MS Teams Webhook</span>
+                <span class="tag">PowerShell</span>
+                <span class="tag">Base64 Reporting</span>
+            </div>
+        </header>
+
+        <section>
+            <h2>專案背景 (Situation)</h2>
+            <p style="color: #586069;">為了解決手動觸發測試與人工回報結果的耗時問題，我建立了自動化測試與 CI/CD 流水的深度整合：</p>
+            <ul style="padding-left: 20px; color: #444;">
+                <li style="margin-bottom: 8px;"><strong>即時性不足：</strong> 測試結果無法即時通知開發人員，導致錯誤修復週期過長。</li>
+                <li style="margin-bottom: 8px;"><strong>報表檢視不便：</strong> 傳統測試報表需額外下載附件且無法快速定位截圖。</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>自動化流程架構 (Workflow)</h2>
+            <div class="flow-container">
+                <div class="flow-step">Commit & Push</div>
+                <div class="flow-arrow">➔</div>
+                <div class="flow-step">GitLab Pipeline</div>
+                <div class="flow-arrow">➔</div>
+                <div class="flow-step">Automation Test</div>
+                <div class="flow-arrow">➔</div>
+                <div class="flow-step">Teams Notification</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>核心行動 (Action)</h2>
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; border: 1px solid #f1f3f5;">
+                <ul style="padding-left: 20px; margin: 0; color: #444;">
+                    <li style="margin-bottom: 12px;"><strong>GitLab Pipeline 自動化：</strong> 撰寫 <code>.gitlab-ci.yml</code>，實現從程式碼推送後自動觸發測試環境部署與腳本執行。</li>
+                    <li style="margin-bottom: 12px;"><strong>MS Teams 通知整合：</strong> 透過 Webhook 實作即時通知，將執行狀態、失敗摘要與 Artifacts 連結推播至團隊頻道。</li>
+                    <li style="margin-bottom: 12px;"><strong>HTML 報表優化：</strong> 使用 PowerShell 處理測試截圖，並將其轉為 <strong>Base64 編碼</strong> 直接內嵌於 HTML 報表，確保網頁開啟即可檢視證據。</li>
+                    <li style="margin-bottom: 12px;"><strong>環境維護自動化：</strong> 實作清理腳本，自動移除測試後產生的暫存檔與日誌，確保 Runner 執行空間不被佔用。</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>最終成果 (Result)</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px;">
+                <div style="padding: 15px; background: #fff; border: 1px solid #e1e4e8; border-radius: 8px; text-align: center;">
+                    <div style="font-size: 24px; font-weight: bold; color: #28a745;">100%</div>
+                    <div style="font-size: 13px; color: #6a737d;">自動化觸發比率</div>
+                </div>
+                <div style="padding: 15px; background: #fff; border: 1px solid #e1e4e8; border-radius: 8px; text-align: center;">
+                    <div style="font-size: 24px; font-weight: bold; color: #28a745;">&lt; 3 min</div>
+                    <div style="font-size: 13px; color: #6a737d;">異常反饋時間</div>
+                </div>
+                <div style="padding: 15px; background: #fff; border: 1px solid #e1e4e8; border-radius: 8px; text-align: center;">
+                    <div style="font-size: 24px; font-weight: bold; color: #28a745;">Easy</div>
+                    <div style="font-size: 13px; color: #6a737d;">錯誤定位難度 (含截圖)</div>
+                </div>
+            </div>
+        </section>
+
+        <footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #f6f8fa; text-align: right; color: #6a737d; font-size: 13px;">
+            © 2026 Helen (Sonya). CI/CD Workflow Optimization.
+        </footer>
+
+    </div>
+</div>
+
+</body>
+</html>

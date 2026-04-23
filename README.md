@@ -1,6 +1,6 @@
 # mypj
 專案作品
-核心專案展示 (Featured Projects) —— 這是重點
+核心專案展示 (Featured Projects)
 
 專案名稱： Playwright E2E 企業級測試框架
 

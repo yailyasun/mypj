@@ -1,8 +1,0 @@
-theme: jekyll-theme-cayman
-show_downloads: false
-
-<style>
-  .site-footer {
-    display: none;
-  }
-</style>

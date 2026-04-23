@@ -3,7 +3,7 @@
         
         <header style="text-align: center; border-bottom: 2px solid #f0f2f5; padding-bottom: 20px; margin-bottom: 30px;">
             <h1 style="color: #0366d6; margin: 0; font-size: 28px;">Project Introduction</h1>
-            <p style="color: #586069; margin: 10px 0 0 0;">👋 歡迎！這裡記錄了我對自動化測試的技術探索與專案實作紀錄。</p>
+            <p style="color: #586069; margin: 10px 0 0 0;">👋 歡迎！這裡記錄了我的專案實作紀錄。</p>
         </header>
 
         <section>

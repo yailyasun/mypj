@@ -1,21 +1,20 @@
-# 專案作品
-核心專案展示 (Featured Projects)
+# Helen's Test Automation Portfolio
 
-專案名稱： Playwright E2E 企業級測試框架
+歡迎來到我的技術作品集。
 
-挑戰： 解決傳統 Selenium 處理動態彈窗與非同步加載不穩定的痛點。
+---
 
-技術亮點： * 封裝 Page Object Model (POM) 降低維護成本。
+## 🚀 核心專案展示
 
-整合 GitLab CI/CD 實現測試結果即時推送至 Teams。
+### 🔹 [自動化測試轉型：Selenium 遷移至 Playwright](./automation-migration.md)
+*專注於技術評估、架構遷移與執行效率優化。*
 
-自動化生成嵌入 Base64 錯誤截圖的 HTML 報表。
+### 🔹 [CI/CD 與流程優化：GitLab CI/CD 整合](./cicd-optimization.md)
+*實現 Microsoft Teams 即時通知與自動化報表產出流程。*
 
-3. 技術工具箱 (Technical Skills)
-使用圖標 (Badges) 讓視覺更專業：
+### 🔹 [系統整合開發：ECPay 支付流與 ETL 優化](./system-integration.md)
+*處理複雜支付電商流程自動化與跨庫資料處理邏輯。*
 
-Languages: C#, SQL (SQL Server / Oracle), PowerShell
+### 🔹 [架構與工具研發：基於 SDD 的測試框架](./framework-sdd.md)
+*導入 Spec-Driven Development 概念，搭建高擴展性的測試底層。*
 
-Automation: Playwright, Selenium, NUnit, SpecFlow
-
-DevOps: GitLab CI, GitHub Actions

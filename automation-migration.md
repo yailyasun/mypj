@@ -55,8 +55,8 @@
             <span style="color: #6a737d; font-size: 13px;">Tools: Playwright Inspector, Trace Viewer, GitHub Actions</span>
         </footer>
         
-  <a href="./" style="display: inline-flex; align-items: center; padding: 8px 16px; background: #f6f8fa; color: #0366d6; text-decoration: none; border-radius: 6px; font-size: 14px; font-weight: 600; border: 1px solid #e1e4e8; margin-bottom: 30px; transition: 0.2s;">
+      <a href="./" style="display: inline-flex; align-items: center; padding: 8px 16px; background: #f6f8fa; color: #0366d6; text-decoration: none; border-radius: 6px;         font-size: 14px; font-weight: 600; border: 1px solid #e1e4e8; margin-bottom: 30px; transition: 0.2s;">
             ⬅️ 返回首頁
-        </a>
+     </a>
     </div>
 </div>

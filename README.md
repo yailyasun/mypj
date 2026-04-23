@@ -1,4 +1,4 @@
-# ProJect
+# Project Introduction
 
 歡迎來到我的技術作品集。
 

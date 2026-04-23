@@ -1,26 +1,32 @@
-# Project Introduction
+<div style="max-width: 800px; margin: 40px auto; font-family: sans-serif; color: #333;">
+    <div style="background: #fff; padding: 40px; border-radius: 15px; border: 1px solid #e1e4e8; box-shadow: 0 10px 25px rgba(0,0,0,0.05);">
+        
+        <header style="text-align: center; border-bottom: 2px solid #f0f2f5; padding-bottom: 20px; margin-bottom: 30px;">
+            <h1 style="color: #0366d6; margin: 0; font-size: 28px;">Helen's Test Automation Portfolio</h1>
+            <p style="color: #586069; margin: 10px 0 0 0;">Senior QA Automation & System Integration</p>
+        </header>
 
-歡迎來到我的技術作品集。
+        <section>
+            <a href="./automation-migration.html" style="text-decoration: none; display: block; background: #f8f9fa; padding: 20px; border-radius: 10px; margin-bottom: 15px; border-left: 5px solid #0366d6; transition: 0.3s;">
+                <h3 style="margin: 0; color: #0366d6;">🚀 自動化測試轉型</h3>
+                <p style="margin: 5px 0 0 0; color: #444; font-size: 14px;">Selenium 遷移至 Playwright 的評估與執行</p>
+            </a>
 
----
+            <a href="./cicd-optimization.html" style="text-decoration: none; display: block; background: #f8f9fa; padding: 20px; border-radius: 10px; margin-bottom: 15px; border-left: 5px solid #28a745; transition: 0.3s;">
+                <h3 style="margin: 0; color: #28a745;">📊 CI/CD 與流程優化</h3>
+                <p style="margin: 5px 0 0 0; color: #444; font-size: 14px;">GitLab CI/CD 整合 Teams 通知、自動化測試報告產出</p>
+            </a>
 
-## 🚀 核心專案展示
+            <a href="./system-integration.html" style="text-decoration: none; display: block; background: #f8f9fa; padding: 20px; border-radius: 10px; margin-bottom: 15px; border-left: 5px solid #f1e05a; transition: 0.3s;">
+                <h3 style="margin: 0; color: #b08d00;">🛠 系統整合開發</h3>
+                <p style="margin: 5px 0 0 0; color: #444; font-size: 14px;">ECPay 支付流自動化測試</p>
+            </a>
 
-### 🔹 [自動化測試轉型：Selenium 遷移至 Playwright](./automation-migration.md)
-*專注於技術評估、架構遷移與執行效率優化。*
+            <a href="./framework-sdd.html" style="text-decoration: none; display: block; background: #f8f9fa; padding: 20px; border-radius: 10px; margin-bottom: 15px; border-left: 5px solid #6f42c1; transition: 0.3s;">
+                <h3 style="margin: 0; color: #6f42c1;">🏗 架構與工具研發</h3>
+                <p style="margin: 5px 0 0 0; color: #444; font-size: 14px;">基於 Spec-Driven Development (SDD) 的測試框架搭建</p>
+            </a>
+        </section>
 
-### 🔹 [CI/CD 與流程優化：GitLab CI/CD 整合](./cicd-optimization.md)
-*實現 Microsoft Teams 即時通知與自動化報表產出流程。*
-
-### 🔹 [系統整合開發：ECPay 支付流與 ETL 優化](./system-integration.md)
-*處理複雜支付電商流程自動化與跨庫資料處理邏輯。*
-
-### 🔹 [架構與工具研發：基於 SDD 的測試框架](./framework-sdd.md)
-*導入 Spec-Driven Development 概念，搭建高擴展性的測試底層。*
-
-<style>
-  /* 隱藏 header 中的所有按鈕 (View on GitHub / Download) */
-  .btn {
-    display: none !important;
-  }
-</style>
+    </div>
+</div>

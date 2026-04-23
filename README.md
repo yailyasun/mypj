@@ -2,8 +2,8 @@
     <div style="background: #fff; padding: 40px; border-radius: 15px; border: 1px solid #e1e4e8; box-shadow: 0 10px 25px rgba(0,0,0,0.05);">
         
         <header style="text-align: center; border-bottom: 2px solid #f0f2f5; padding-bottom: 20px; margin-bottom: 30px;">
-            <h1 style="color: #0366d6; margin: 0; font-size: 28px;">Helen's Test Automation Portfolio</h1>
-            <p style="color: #586069; margin: 10px 0 0 0;">Senior QA Automation & System Integration</p>
+            <h1 style="color: #0366d6; margin: 0; font-size: 28px;">Project Introduction</h1>
+            <p style="color: #586069; margin: 10px 0 0 0;">👋 歡迎！這裡記錄了我對自動化測試的技術探索與專案實作紀錄。</p>
         </header>
 
         <section>

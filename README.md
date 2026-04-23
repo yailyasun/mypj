@@ -1,3 +1,14 @@
+<style>
+  /* 隱藏 GitHub Pages 自動生成的預設標題區塊 */
+  header {
+    display: none !important;
+  }
+  
+  /* 如果上面那個沒效，嘗試隱藏這個具體的標記 */
+  h1 a[id^="mypj"] {
+    display: none !important;
+  }
+</style>
 <div style="max-width: 800px; margin: 40px auto; font-family: sans-serif; color: #333;">
     <div style="background: #fff; padding: 40px; border-radius: 15px; border: 1px solid #e1e4e8; box-shadow: 0 10px 25px rgba(0,0,0,0.05);">
         

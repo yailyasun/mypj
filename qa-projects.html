@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="utf-8">
+    <title>自動化測試專案目錄</title>
+    <style>
+        :root {
+            --primary-blue: #0056b3;
+            --bg-light: #f4f7f9;
+            --border-color: #d1d9e0;
+            --text-main: #333;
+        }
+
+        body { 
+            margin: 0; padding: 0; background-color: var(--bg-light); 
+            font-family: "Microsoft JhengHei", "微軟正黑體", sans-serif; 
+            line-height: 1.6; color: var(--text-main); 
+        }
+
+        .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+
+        .header { text-align: center; margin-bottom: 40px; }
+        h1 { font-size: 28px; color: var(--primary-blue); }
+
+        /* 專案清單佈局 */
+        .project-list {
+            display: grid;
+            grid-template-columns: 1fr; /* 單欄排列，像清單一樣好閱讀 */
+            gap: 20px;
+        }
+
+        .project-item {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .project-item:hover {
+            transform: translateX(10px);
+            border-color: var(--primary-blue);
+            box-shadow: 0 4px 12px rgba(0, 86, 179, 0.1);
+        }
+
+        .project-icon {
+            font-size: 32px;
+            margin-right: 25px;
+            width: 60px;
+            height: 60px;
+            background: #f0f7ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-info { flex-grow: 1; }
+        .project-info h3 { margin: 0 0 5px 0; color: #1a1a1a; font-size: 20px; }
+        .project-info p { margin: 0; color: #666; font-size: 14px; }
+
+        .arrow { color: var(--primary-blue); font-weight: bold; font-size: 20px; }
+
+        /* 返回按鈕樣式 (與首頁統一) */
+        .btn-container { text-align: center; margin-top: 50px; }
+        .nav-back-btn {
+            display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; 
+            background-color: #ffffff; color: var(--primary-blue); border: 1.5px solid var(--primary-blue);
+            border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease;
+        }
+        .nav-back-btn:hover { background-color: var(--primary-blue); color: #ffffff; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>🔍 自動化測試專案集</h1>
+        <p>涵蓋架構研發、框架遷移及 CI/CD 優化實績</p>
+    </div>
+
+    <div class="project-list">
+        
+        <a href="framework-sdd.html" class="project-item">
+            <div class="project-icon">🏗️</div>
+            <div class="project-info">
+                <h3>Spec-Driven Development (SDD) 架構研發</h3>
+                <p>以規格書為核心的測試開發流程，實現需求與程式碼同步。</p>
+            </div>
+            <div class="arrow">→</div>
+        </a>
+
+        <a href="automation-migration.html" class="project-item">
+            <div class="project-icon">🤖</div>
+            <div class="project-info">
+                <h3>Selenium 轉型 Playwright 遷移實踐</h3>
+                <p>運用 AI 規格驅動技術，快速完成異質框架遷移與腳本重構。</p>
+            </div>
+            <div class="arrow">→</div>
+        </a>
+
+        <a href="ECpay-demo.html" class="project-item">
+            <div class="project-icon">💳</div>
+            <div class="project-info">
+                <h3>綠界 ECPay 金流自動化驗證</h3>
+                <p>完整 E2E 支付流程測試，包含 Webhook 回調與資料庫一致性校驗。</p>
+            </div>
+            <div class="arrow">→</div>
+        </a>
+
+        <a href="cicd-optimization.html" class="project-item">
+            <div class="project-icon">🚀</div>
+            <div class="project-info">
+                <h3>CI/CD Pipeline 測試流程優化</h3>
+                <p>GitLab 整合 MS Teams 即時回報，打造高效自動化測試反饋鏈。</p>
+            </div>
+            <div class="arrow">→</div>
+        </a>
+
+    </div>
+
+    <div class="btn-container">
+        <a href="index.html" class="nav-back-btn">⬅️ 返回首頁</a>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="utf-8">
+    <title>架構翻新重構</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true, theme: 'neutral' });</script>
+    <style>
+        :root {
+            --primary-green: #28a745;
+            --bg-light: #f4f7f9;
+            --border-color: #d1d9e0;
+            --text-main: #333;
+        }
+        body { margin: 0; padding: 0; background-color: var(--bg-light); font-family: "Microsoft JhengHei", "微軟正黑體", sans-serif; line-height: 1.6; color: var(--text-main); }
+        .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+        .card { background: #fff; padding: 40px; border-radius: 12px; border: 1px solid var(--border-color); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        h1 { font-size: 28px; color: var(--primary-green); border-left: 5px solid var(--primary-green); padding-left: 15px; margin-bottom: 30px; }
+        h2 { font-size: 20px; margin-top: 40px; border-bottom: 1px solid #eee; padding-bottom: 8px; color: #1a1a1a; }
+        
+        .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0; }
+        .comparison-item { padding: 15px; border-radius: 8px; font-size: 14px; }
+        .before { background: #fff5f5; border-left: 4px solid #f56565; }
+        .after { background: #f0fff4; border-left: 4px solid #48bb78; }
+
+        .tech-highlight { background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0; }
+        .diagram-container { background: #fff; border: 1px solid #eee; padding: 20px; border-radius: 10px; margin: 20px 0; text-align: center; }
+
+        .btn-container { text-align: center; margin-top: 50px; }
+        .nav-back-btn {
+            display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; 
+            background-color: #ffffff; color: var(--primary-green); border: 1.5px solid var(--primary-green);
+            border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease;
+        }
+        .nav-back-btn:hover { background-color: var(--primary-green); color: #ffffff; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <h1>🚀 企業內部查詢平台重構 (Web Form to .NET Core)</h1>
+        
+        <p><strong>專案概述：</strong> 既有內部查詢平台因使用 Web Form 舊架構，面臨 ViewState 負載過重導致載入緩慢、代碼高度耦合難以測試等問題。本專案將核心邏輯遷移至 .NET Core 架構，提升系統擴充性與執行效能。</p>
+
+        <h2>🛠️ 架構轉型對照 (Architecture Evolution)</h2>
+        <div class="comparison-grid">
+            <div class="comparison-item before">
+                <strong>重構前 (Legacy Web Form)</strong><br/>
+                <ul>
+                    <li>高度依賴 ViewState，造成頁面 Size 過大。</li>
+                    <li>商業邏輯散落在 Code-behind (Page_Load)。</li>
+                    <li>手動處理資料庫連線與查詢，難以單元測試。</li>
+                </ul>
+            </div>
+            <div class="comparison-item after">
+                <strong>重構後 (.NET Core / MVC)</strong><br/>
+                <ul>
+                    <li>改用 JSON 資料交換，大幅減輕伺服器負荷。</li>
+                    <li>導入 Service Layer 與 Repository Pattern。</li>
+                    <li>全面支援 Dependency Injection (DI) 提升靈活性。</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>🏗️ 現代化開發範例</h2>
+        <div class="diagram-container">
+            <div class="mermaid">
+            graph TD
+                A[前端: AJAX / Fetch] --> B[Controller 控制層]
+                B --> C[Service 業務邏輯層]
+                C --> D[Repository 資料存取層]
+                D --> E[(Database)]
+                
+                style B fill:#e8f5e9,stroke:#2e7d32
+                style C fill:#e8f5e9,stroke:#2e7d32
+                style D fill:#e8f5e9,stroke:#2e7d32
+            </div>
+        </div>
+
+        <h2>🌟 關鍵技術貢獻</h2>
+        <div class="tech-highlight">
+            <ul>
+                <li><strong>非同步化優化：</strong> 全面導入 <code>async/await</code> 進行非同步查詢，解決原本同步執行時容易造成的 Thread Pool 阻塞問題，大幅提升高併發下的系統穩定性。</li>
+                <li><strong>中介軟體實作：</strong> 建立自定義 Middleware 統一處理例外錯誤 (Global Exception Handling) 與 操作記錄，降低程式碼重複率。</li>
+                <li><strong>效能提升：</strong> 經由架構翻新與資料檢索邏輯優化，複雜報表之查詢回應速度平均提升達 <strong>40%</strong> 以上。</li>
+            </ul>
+        </div>
+
+        <div class="btn-container">
+            <a href="dev-projects.html" class="nav-back-btn">⬅️ 返回清單</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

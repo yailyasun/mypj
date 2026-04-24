@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 <head>
     <meta charset="utf-8">
-    <title>自動化批次 ETL 作業 - Helen's Portfolio</title>
+    <title>自動化批次 ETL 處理 - Helen's Portfolio</title>
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true, theme: 'neutral' });</script>
     <style>
@@ -13,8 +13,8 @@
         h1 { color: var(--primary-green); border-left: 5px solid var(--primary-green); padding-left: 15px; margin-bottom: 30px; }
         .tech-tag { display: inline-block; background: #e9f7ef; color: var(--primary-green); padding: 4px 12px; border-radius: 4px; font-size: 14px; font-weight: bold; margin-bottom: 20px; }
         
-        .logic-box { background: #f0f7ff; border: 1px solid #bae7ff; padding: 25px; border-radius: 8px; margin: 20px 0; }
-        .logic-box h3 { margin-top: 0; color: #0056b3; font-size: 18px; }
+        .logic-box { background: #fffbe6; border: 1px solid #ffe58f; padding: 25px; border-radius: 8px; margin: 20px 0; }
+        .logic-box h3 { margin-top: 0; color: #856404; font-size: 18px; }
         .logic-box ul { padding-left: 20px; }
         .logic-box li { margin-bottom: 12px; }
 
@@ -31,48 +31,39 @@
 <div class="container">
     <div class="card">
         <div class="tech-tag">Netpro Trinity ETL Platform</div>
-        <h1>⚙️ 自動化批次 (ETL JOB) 與資料檢核系統</h1>
+        <h1>⚙️ 自動化批次 (ETL JOB) 與業務邏輯稽核系統</h1>
         
-        <p><strong>專案目標：</strong> 運用 <strong>Netpro Trinity</strong> 構建跨平台自動化任務排程，針對運動場館營運數據執行多維度 ETL 轉換與實時稽核，確保異質資料庫間的資料嚴謹性與業務邏輯一致性。</p>
+        <p><strong>專案目標：</strong> 運用 <strong> Trinity</strong> 構建自動化排程監控機制，針對場館營運資料執行邏輯稽核；透過後端自動化任務，彌補前端系統卡控缺失，確保財務與營運資料的絕對正確性。</p>
 
         <div class="logic-box">
-            <h3>🔍 全方位營運數據自動化稽核機制</h3>
+            <h3>🔍 營運資料監控</h3>
             <ul>
-                <li><strong>財務一致性自動對帳：</strong> 整合發票系統、支付網關與核心資料庫，實現每日自動對帳流程，精準捕捉金額不符或漏開票等異常，確保帳務零差異。</li>
-                <li><strong>資源調度邏輯校對：</strong> 深度檢核場地預約時段、教練排程與課程配置之重疊性，主動偵測並預警潛在的資源衝突風險，將排程錯誤率降至 0%。</li>
-                <li><strong>跨系統狀態同步校驗：</strong> 針對接手之外包系統進行數據加固，自動偵測訂單從成立至核銷之生命週期狀態，若發現狀態異步即觸發 <strong>SMTP 郵件即時告警</strong>。</li>
-                <li><strong>管理決策報表產製：</strong> 自動擷取 <strong>SQL Server</strong> 與 <strong>Oracle</strong> 異質數據來源，進行清洗與彙整後，定時產出核心營運統計報表供決策層參考。</li>
+                <li><strong>財務稅務精準校驗：</strong> 自動比對訂單總額與發票開立金額，並針對<strong>「未稅/含稅計算落差」</strong>進行深度檢核，避免因系統尾數誤差導致的稅務申報風險。</li>
+                <li><strong>資源調度衝突攔截：</strong> 定時稽核<strong>「場地重複預約」</strong>之異常狀態，主動偵測因前端系統不當操作或併發處理漏洞產生的預約衝突。</li>
+                <li><strong>資料完整性檢查 (Orphan Records)：</strong> 追蹤訂單與商品的對應關係，主動抓取<strong>「孤兒訂單（無對應商品）」</strong>或關聯資料遺失之異常，維持資料庫參照完整性。</li>
+                <li><strong>異常即時告警機制：</strong> 若偵測到上述邏輯衝突，系統即時觸發 <strong>SMTP 郵件告警</strong> 並記錄異常 Log，確保維運人員能在營運受阻前完成數據校正。</li>
             </ul>
         </div>
 
         <div class="diagram-container">
-            <h3>自動化稽核工作流 (ETL & Audit Workflow)</h3>
+            <h3>運作流程</h3>
             <div class="mermaid">
             graph TD
-                T[Trinity 排程觸發] --> E[Extract: 跨資料庫資料擷取]
-                E --> T1[Transform: 資料清洗與一致性校對]
-                T1 --> Q{異常判定?}
-                Q -- 偵測到邏輯衝突 --> A[SMTP 郵件告警與日誌記錄]
-                Q -- 資料檢核通過 --> L[Load: 匯入統計庫/產出報表]
-                A --> M[維運人員即時介入修復]
-                L --> S[Success: 任務成功回報]
+                T[Trinity 排程觸發] --> V{ 格式預檢}
+                V -- 驗證通過 --> T1[業務規則比對]
+                T1 --> Q{Q: 偵測到錯誤}
+                Q -- 資料不符、衝突 --> A[異常攔截與告警]
+                Q -- 符合邏輯規則 --> L[ 資料同步與報表產製]
+                A --> M[維運人員介入校對處理]
+                L --> S[Success: 任務完成]
                 
+                style V fill:#f8f9fa,stroke:#ddd
                 style A fill:#fff1f0,stroke:#f5222d
                 style L fill:#f6ffed,stroke:#52c41a
             </div>
         </div>
 
-        <div class="feature-grid">
-            <div class="feature-item">
-                <strong>🔧 異質資料庫整合實績</strong><br/>
-                熟練操作 Trinity 處理 <strong>SQL Server </strong> 與 <strong>Oracle</strong> 之間的資料流轉，克服 Encoding 差異與複雜的 SQL 關聯查詢。
-            </div>
-            <div class="feature-item">
-                <strong>🛡️ 主動式維運轉型</strong><br/>
-                將原本被動的故障報修，轉化為主動的「系統自動體檢」模式，顯著提升接手遺留系統後的整體運作穩定度。
-            </div>
-        </div>
-
+       
         <div class="btn-container">
             <a href="dev-projects.html" class="nav-back-btn">⬅️ 返回清單</a>
         </div>

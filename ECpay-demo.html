@@ -26,15 +26,29 @@
             border: 1px solid var(--border-color); box-shadow: 0 12px 24px rgba(0,0,0,0.05); 
         }
 
-        /* 返回按鈕 */
-        .btn-back {
-            display: inline-flex; align-items: center; padding: 8px 16px; 
-            background: #fff; color: #0366d6; text-decoration: none; 
-            border-radius: 6px; font-size: 14px; font-weight: 600; 
-            border: 1px solid var(--border-color); margin-bottom: 30px;
-            transition: 0.2s;
-        }
-        .btn-back:hover { background: #f6f8fa; border-color: #d1d5da; }
+       /* 標準化返回按鈕 */
+.nav-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: #0056b3;
+    border: 1.5px solid #0056b3;
+    border-radius: 6px;
+    text-decoration: none;
+    font-family: "Microsoft JhengHei", "微軟正黑體", sans-serif;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.nav-back-btn:hover {
+    background-color: #0056b3;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
 
         /* Header 部分 */
         .header { border-bottom: 2px solid #f6f8fa; padding-bottom: 30px; margin-bottom: 30px; }
@@ -198,9 +212,11 @@
             </div>
         </div>
 
-          <a href="./index.html" class="btn-back">⬅️ 返回首頁</a>
-
-
+        <div style="text-align: center; margin-top: 50px;">
+    <a href="./index.html" class="nav-back-btn">
+        <span>⬅️</span> 返回首頁
+    </a>
+</div>
     </div>
 </div>
 

@@ -1,82 +1,132 @@
-<section class="card" style="margin-top: 40px;">
-    <div class="header">
-        <h1><span class="emoji">🏗️</span>架構與工具研發：SDD 自動化測試框架</h1>
-        <p class="description">
-            為解決測試腳本維護成本高、需求變動與測試案例脫節的痛點，研發並搭建一套基於 <strong>Spec-Driven Development (SDD)</strong> 核心思想的 E2E 測試架構。
-        </p>
-    </div>
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="utf-8">
+    <title>SDD 架構研發 - Helen's Portfolio</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true, theme: 'neutral' });</script>
+    <style>
+        :root {
+            --primary-blue: #0056b3;
+            --bg-light: #f4f7f9;
+            --border-color: #d1d9e0;
+            --text-main: #333;
+        }
 
-    <h2><span class="emoji">💡</span>專案開發背景</h2>
-    <div class="highlight-box">
-        <p style="margin-top: 0; color: var(--text-muted);">
-            在傳統流程中，開發文檔、測試案例與自動化腳本往往是孤立的。透過 <strong>SDD (規格驅動開發)</strong>，我們將測試規格書作為「唯一真相來源 (Single Source of Truth)」，實現從需求定義到自動化執行的無縫銜接。
-        </p>
-    </div>
+        body { 
+            margin: 0; padding: 0; background-color: var(--bg-light); 
+            font-family: "Microsoft JhengHei", "微軟正黑體", sans-serif; 
+            line-height: 1.5; color: var(--text-main); 
+        }
 
-    <h3>技術棧與研發工具</h3>
-    <div class="table-container">
-        <table>
-            <thead>
-                <tr>
-                    <th>層級</th>
-                    <th>選用工具 / 技術</th>
-                    <th>研發價值</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>核心框架</strong></td>
-                    <td>Playwright + .NET / C#</td>
-                    <td>利用 Playwright 的 Auto-wait 與隔離性，解決 Selenium 長期以來的 Flaky Tests 問題。</td>
-                </tr>
-                <tr>
-                    <td><strong>規格定義</strong></td>
-                    <td>SpecFlow (Gherkin syntax)</td>
-                    <td>使用自然語言描述測試場景，非技術人員亦能校對測試邏輯。</td>
-                </tr>
-                <tr>
-                    <td><strong>開發模式</strong></td>
-                    <td>Page Object Model (POM) + SDD</td>
-                    <td>將 UI 元素與測試邏輯分離，當規格異動時，僅需維護對應的 Step Definitions。</td>
-                </tr>
-                <tr>
-                    <td><strong>AI 輔助</strong></td>
-                    <td>LLM Agent Integration</td>
-                    <td>研發 AI 代理工具，根據 API 文件自動生成基礎 NUnit 測試代碼與 Mock Data。</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+        .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
 
-    <h2><span class="emoji">🚀</span>架構設計亮點</h2>
-    <div class="feature-grid">
-        <div class="feature-card">
-            <h3>🛠️ 模組化與可擴展性</h3>
-            <ul>
-                <li>自主研發跨資料庫處理工具，支援 Oracle 與 SQL Server 資料一致性校驗。</li>
-                <li>封裝 ECPay 支付模組，實現一行代碼即可呼叫完整的金流支付模擬。</li>
-            </ul>
+        .card { 
+            background: #fff; padding: 40px; border-radius: 12px; 
+            border: 1px solid var(--border-color); box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
+        }
+
+        h1 { font-size: 28px; color: var(--primary-blue); border-left: 5px solid var(--primary-blue); padding-left: 15px; margin-bottom: 30px; }
+        h2 { font-size: 20px; margin-top: 40px; border-bottom: 1px solid #eee; padding-bottom: 8px; }
+
+        .highlight-box {
+            background: #fdfaf0; border: 1px solid #f9e2af; 
+            padding: 20px; border-radius: 8px; margin: 20px 0;
+        }
+
+        .diagram-container {
+            background: #fff; border: 1px solid #eee; padding: 20px;
+            border-radius: 10px; margin: 20px 0; text-align: center;
+        }
+
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
+        .grid-item { 
+            background: #f8f9fa; padding: 15px; border-radius: 8px; 
+            border-left: 4px solid #0056b3; font-size: 14px;
+        }
+
+        /* 返回按鈕樣式 */
+        .btn-container {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px dashed var(--border-color);
+        }
+        .btn-back {
+            display: inline-block; padding: 10px 25px; 
+            background: #fff; color: var(--primary-blue); text-decoration: none; 
+            border-radius: 6px; font-size: 15px; font-weight: bold; 
+            border: 1px solid var(--primary-blue);
+            transition: all 0.3s;
+        }
+        .btn-back:hover { background: var(--primary-blue); color: #fff; }
+
+        .footer { text-align: center; color: #888; font-size: 12px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <h1>🏗️ 架構與工具研發：SDD 測試框架</h1>
+        
+        <div class="highlight-box">
+            <strong>核心目標：</strong> 將「需求規格書」作為唯一來源，自動驅動測試腳本，達成規格與代碼同步。
         </div>
-        <div class="feature-card">
-            <h3>📊 自動化報告與整合</h3>
-            <ul>
-                <li>自定義 GitLab CI/CD Pipeline 流程。</li>
-                <li>串接 Microsoft Teams Webhook，測試失敗時自動發送即時警示與 Base64 截圖報告。</li>
-            </ul>
+
+        <h2>📊 SDD 運作流程</h2>
+        <div class="diagram-container">
+            <div class="mermaid">
+            graph LR
+                A[需求規格書] -->|Step Def| B[Gherkin 場景]
+                B -->|映射| C{SDD 框架}
+                C -->|驅動| D[Playwright 執行]
+                D -->|反饋| E[即時測試報告]
+                
+                style A fill:#e1f5fe,stroke:#01579b
+                style C fill:#fff9c4,stroke:#fbc02d
+                style E fill:#e8f5e9,stroke:#2e7d32
+            </div>
         </div>
-    </div>
 
-    <h3>SDD 研發流程架構</h3>
-    <div class="mermaid-container" style="background: #fdfdfd;">
-        <p style="font-size: 14px; color: #666;">
-            [規格書定義] ➔ [Step Definitions 自動產生] ➔ [Playwright 邏輯實作] ➔ [CI/CD 自動執行]
-        </p>
-    </div>
+        <h2>🛠️ 技術架構整合</h2>
+        <div class="diagram-container">
+            <div class="mermaid">
+            graph TD
+                CI[GitLab CI/CD] --> PW[Playwright .NET]
+                PW --> DB[跨庫校驗工具]
+                DB --> Oracle[(Oracle)]
+                DB --> SQL[(SQL Server)]
+                PW --> MS[MS Teams 通知]
+            </div>
+        </div>
 
-    <h2><span class="emoji">📈</span>研發效益</h2>
-    <ul style="line-height: 2; color: var(--text-main);">
-        <li><strong>降低維護成本</strong>：腳本重用率提升 40%，需求變動後的修復時間減少 50%。</li>
-        <li><strong>工程效率提升</strong>：透過 AI 工具輔助生成測試案例，縮短 30% 的專案初期搭建時間。</li>
-        <li><strong>團隊協作優化</strong>：Kuan-lin 等工程團隊可透過直觀的 Spec 報告快速理解測試覆蓋點，減少溝通誤差。</li>
-    </ul>
-</section>
+        <h2>🚀 研發核心亮點</h2>
+        <div class="grid">
+            <div class="grid-item">
+                <strong>1. 規格優先 (Spec-First)</strong><br/>
+                降低開發與測試間的溝通落差。
+            </div>
+            <div class="grid-item">
+                <strong>2. 跨庫數據一致性</strong><br/>
+                自動比對多來源資料庫正確性。
+            </div>
+            <div class="grid-item">
+                <strong>3. 異常監控</strong><br/>
+                失敗即時截圖 Base64 回傳 Teams。
+            </div>
+            <div class="grid-item">
+                <strong>4. AI 輔助開發</strong><br/>
+                利用 LLM 自動生成測試基礎代碼。
+            </div>
+        </div>
+
+        <div class="btn-container">
+            <a href="./index.html" class="btn-back">⬅️ 返回首頁 Portfolio</a>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

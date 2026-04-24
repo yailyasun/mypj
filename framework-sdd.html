@@ -45,16 +45,29 @@
             border-left: 4px solid #0056b3; font-size: 14px;
         }
 
-        .btn-container { text-align: center; margin-top: 50px; padding-top: 20px; border-top: 1px dashed var(--border-color); }
-        .btn-back {
-            display: inline-block; padding: 10px 25px; 
-            background: #fff; color: var(--primary-blue); text-decoration: none; 
-            border-radius: 6px; font-size: 15px; font-weight: bold; 
-            border: 1px solid var(--primary-blue); transition: all 0.3s;
-        }
-        .btn-back:hover { background: var(--primary-blue); color: #fff; }
+      /* 標準化返回按鈕 */
+.nav-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: #0056b3;
+    border: 1.5px solid #0056b3;
+    border-radius: 6px;
+    text-decoration: none;
+    font-family: "Microsoft JhengHei", "微軟正黑體", sans-serif;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
 
-        .footer { text-align: center; color: #888; font-size: 12px; margin-top: 20px; }
+.nav-back-btn:hover {
+    background-color: #0056b3;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
     </style>
 </head>
 <body>
@@ -119,9 +132,11 @@
             </div>
         </div>
 
-        <div class="btn-container">
-            <a href="./index.html" class="btn-back">⬅️ 返回首頁</a>
-        </div>
+     <div style="text-align: center; margin-top: 50px;">
+    <a href="./index.html" class="nav-back-btn">
+        <span>⬅️</span> 返回首頁
+    </a>
+</div>
 
     </div>
 </div>

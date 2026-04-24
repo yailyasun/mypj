@@ -14,12 +14,29 @@
             background: #fff; padding: 40px; border-radius: 16px; 
             border: 1px solid #e1e4e8; box-shadow: 0 12px 24px rgba(0,0,0,0.05); 
         }
-        .btn-back {
-            display: inline-flex; align-items: center; padding: 8px 16px; 
-            background: #f6f8fa; color: #0366d6; text-decoration: none; 
-            border-radius: 6px; font-size: 14px; font-weight: 600; 
-            border: 1px solid #e1e4e8; margin-bottom: 30px;
-        }
+        /* 標準化返回按鈕 */
+.nav-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: #0056b3;
+    border: 1.5px solid #0056b3;
+    border-radius: 6px;
+    text-decoration: none;
+    font-family: "Microsoft JhengHei", "微軟正黑體", sans-serif;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.nav-back-btn:hover {
+    background-color: #0056b3;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
         header { margin-bottom: 35px; border-bottom: 2px solid #f6f8fa; padding-bottom: 20px; }
         h1 { font-size: 32px; color: #1b1f23; margin: 0 0 10px 0; }
         h2 { font-size: 20px; color: #24292e; border-left: 4px solid #28a745; padding-left: 12px; margin: 30px 0 15px 0; }
@@ -137,8 +154,12 @@
                 </div>
             </div>
         </section>
-<br>
-           <a href="./" class="btn-back">⬅️ 返回首頁</a>
+
+         <div style="text-align: center; margin-top: 50px;">
+    <a href="./index.html" class="nav-back-btn">
+        <span>⬅️</span> 返回首頁
+    </a>
+</div>
 
     </div>
 </div>

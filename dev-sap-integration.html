@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="utf-8">
+    <title>SAP 與 BPM 整合 </title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true, theme: 'neutral' });</script>
+    <style>
+        :root { --primary-green: #28a745; --bg-light: #f4f7f9; --text-main: #333; }
+        body { margin: 0; padding: 0; background-color: var(--bg-light); font-family: "Microsoft JhengHei", sans-serif; line-height: 1.6; }
+        .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+        .card { background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        h1 { color: var(--primary-green); border-left: 5px solid var(--primary-green); padding-left: 15px; }
+        .diagram-container { background: #fff; border: 1px solid #eee; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .tech-box { background: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid var(--primary-green); margin-top: 20px; }
+        .btn-container { text-align: center; margin-top: 50px; }
+        .nav-back-btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: #fff; color: var(--primary-green); border: 1.5px solid var(--primary-green); border-radius: 6px; text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <h1>🔄 SAP 與 BPM 異質系統對接開發</h1>
+        <p><strong>專案目標：</strong> 實現 SAP 表單送簽流程自動化，將 ERP 端的單據透過中繼層同步至 BPM 簽核系統。</p>
+
+        <div class="diagram-container">
+            <h3>系統架構流圖 (System Architecture)</h3>
+            <div class="mermaid">
+            graph LR
+                A[SAP 送簽] --> B{中繼 Table}
+                B --> C[Control File GUID]
+                B --> D[BPM 流程參數]
+                B --> E[表單頭/單身]
+                C & D & E --> F[批次發起 BPM 程式]
+                F --> G[BPM 表單簽核]
+                G --> H[結案 InBound 回傳]
+                H --> I[更新 SAP 狀態]
+            </div>
+        </div>
+
+        <div class="tech-box">
+            <h3>🛠️ 技術實作與卡控點</h3>
+            <ul>
+                <li><strong>中繼層機制：</strong> 設計 SQL Server 中繼資料表，透過 Control File 與 GUID 確保每一筆採購單的唯一性與資料完整性。</li>
+                <li><strong>Outbound/Inbound 閉環：</strong> 除了將 SAP 資料拋出，更設計了資料回補機制，當 BPM 簽核結束後，自動透過 Inbound 批次程式將狀態反寫回 SAP。</li>
+                <li><strong>異常通知機制：</strong> 針對公司、工號、部門等關鍵欄位設計轉換邏輯，若對接過程發生異常，系統會自動發出通知，確保流程不中斷。</li>
+            </ul>
+        </div>
+
+        <div class="btn-container">
+            <a href="dev-projects.html" class="nav-back-btn">⬅️ 返回清單</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

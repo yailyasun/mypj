@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="utf-8">
+    <title>開發與系統整合目錄 - Helen's Portfolio</title>
+    <style>
+        :root {
+            --primary-green: #28a745;
+            --bg-light: #f4f7f9;
+            --border-color: #d1d9e0;
+            --text-main: #333;
+        }
+
+        body { 
+            margin: 0; padding: 0; background-color: var(--bg-light); 
+            font-family: "Microsoft JhengHei", "微軟正黑體", sans-serif; 
+            line-height: 1.6; color: var(--text-main); 
+        }
+
+        .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+
+        .header { text-align: center; margin-bottom: 40px; }
+        h1 { font-size: 28px; color: var(--primary-green); }
+
+        .project-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .project-item {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .project-item:hover {
+            transform: translateX(10px);
+            border-color: var(--primary-green);
+            box-shadow: 0 4px 12px rgba(40, 167, 69, 0.1);
+        }
+
+        .project-icon {
+            font-size: 32px;
+            margin-right: 25px;
+            width: 60px;
+            height: 60px;
+            background: #e9f7ef;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-info { flex-grow: 1; }
+        .project-info h3 { margin: 0 0 5px 0; color: #1a1a1a; font-size: 20px; }
+        .project-info p { margin: 0; color: #666; font-size: 14px; }
+
+        .arrow { color: var(--primary-green); font-weight: bold; font-size: 20px; }
+
+        .btn-container { text-align: center; margin-top: 50px; }
+        .nav-back-btn {
+            display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; 
+            background-color: #ffffff; color: var(--primary-green); border: 1.5px solid var(--primary-green);
+            border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease;
+        }
+        .nav-back-btn:hover { background-color: var(--primary-green); color: #ffffff; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>💻 後端開發與系統整合</h1>
+     
+    </div>
+
+    <div class="project-list">
+        
+        <a href="dev-sap-integration.html" class="project-item">
+            <div class="project-icon">🔄</div>
+            <div class="project-info">
+                <h3>SAP 與 BPM 異質系統對接開發</h3>
+                <p>建構資料轉接，SAP 資料自動帶入 BPM 簽核表單。</p>
+            </div>
+            <div class="arrow">→</div>
+        </a>
+
+        <a href="dev-legacy-modernization.html" class="project-item">
+            <div class="project-icon">🚀</div>
+            <div class="project-info">
+                <h3>查詢平台現代化重構 (Web Form to .NET Core)</h3>
+                <p>Legacy System 架構轉型，優化大規模資料檢索效能與後端邏輯。</p>
+            </div>
+            <div class="arrow">→</div>
+        </a>
+
+        <a href="dev-batch-automation.html" class="project-item">
+            <div class="project-icon">⚙️</div>
+            <div class="project-info">
+                <h3>自動化批次 (ETL JOB) 處理</h3>
+                <p>自動執行排程任務，處理每日大量報表統計與資料檢核驗證。</p>
+            </div>
+            <div class="arrow">→</div>
+        </a>
+
+        <a href="dev-bpm-redesign.html" class="project-item">
+            <div class="project-icon">📋</div>
+            <div class="project-info">
+               <h3>運動場館營運系統救援與功能開發</h3>
+        <p>接手外包系統之技術回歸與架構整併，修復核心邏輯缺陷、強化異常卡控機制，營運端新功能研發。</p>
+            </div>
+            <div class="arrow">→</div>
+        </a>
+
+    </div>
+
+    <div class="btn-container">
+        <a href="index.html" class="nav-back-btn">⬅️ 返回大首頁</a>
+    </div>
+</div>
+
+</body>
+</html>

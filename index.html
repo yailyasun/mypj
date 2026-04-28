@@ -2,32 +2,73 @@
 <html lang="zh-Hant">
 <head>
     <meta charset="utf-8">
-    <title>Helen's Portfolio | QA & Developer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helen's Portfolio | Backend Dev & QA Automation</title>
     <style>
         :root {
             --primary-blue: #0056b3;
             --primary-green: #28a745;
             --bg-light: #f4f7f9;
             --text-main: #333;
+            --text-muted: #666;
             --border-color: #d1d9e0;
         }
 
         body { 
             margin: 0; padding: 0; background-color: var(--bg-light); 
-            font-family: "Microsoft JhengHei", "微軟正黑體", sans-serif; 
+            font-family: "Segoe UI", "Microsoft JhengHei", "微軟正黑體", sans-serif; 
             line-height: 1.6; color: var(--text-main); 
         }
 
         /* Header 區塊 */
         .hero-section {
-            background: #fff; padding: 60px 20px; text-align: center;
+            background: #fff; padding: 80px 20px; text-align: center;
             border-bottom: 1px solid var(--border-color);
         }
 
         .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
 
-        h1 { font-size: 32px; margin-bottom: 10px; color: #1a1a1a; }
-        .subtitle { font-size: 18px; color: #666; margin-bottom: 30px; }
+        h1 { font-size: 38px; margin-bottom: 15px; color: #1a1a1a; letter-spacing: 1px; }
+        
+        .intro-text { 
+            max-width: 750px; 
+            margin: 0 auto 30px; 
+            font-size: 18px; 
+            color: #444; 
+            line-height: 1.8;
+        }
+
+        .highlight { font-weight: bold; color: #000; border-bottom: 2px solid var(--border-color); }
+
+        /* 標籤雲樣式 */
+        .hero-tags { 
+            display: flex; 
+            justify-content: center; 
+            flex-wrap: wrap; 
+            gap: 12px; 
+            margin-bottom: 40px; 
+        }
+
+        .tag-dev {
+            font-size: 13px; font-weight: bold; padding: 6px 16px; border-radius: 20px;
+            background: #e9f7ef; color: var(--primary-green); border: 1px solid #c3e6cb;
+        }
+
+        .tag-qa {
+            font-size: 13px; font-weight: bold; padding: 6px 16px; border-radius: 20px;
+            background: #e7f3ff; color: var(--primary-blue); border: 1px solid #b8daff;
+        }
+
+        /* 按鈕樣式 */
+        .cta-group { display: flex; justify-content: center; gap: 15px; }
+        .btn {
+            text-decoration: none; padding: 12px 28px; border-radius: 30px;
+            font-weight: bold; font-size: 15px; transition: all 0.3s ease;
+        }
+        .btn-primary { background: #333; color: #fff; }
+        .btn-primary:hover { background: #000; transform: translateY(-2px); }
+        .btn-outline { border: 1px solid #333; color: #333; }
+        .btn-outline:hover { background: #f8f9fa; transform: translateY(-2px); }
 
         /* 分類卡片網格 */
         .category-grid {
@@ -40,40 +81,36 @@
         .category-card {
             background: #fff; border: 1px solid var(--border-color); border-radius: 16px;
             padding: 40px; text-decoration: none; color: inherit;
-            transition: all 0.3s ease; display: flex; flex-direction: column; align-items: center;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
+            display: flex; flex-direction: column; align-items: center;
             text-align: center; position: relative;
         }
 
-        /* 測試區塊 Hover 效果 */
         .qa-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 86, 179, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 86, 179, 0.1);
             border-color: var(--primary-blue);
             border-bottom: 6px solid var(--primary-blue);
         }
 
-        /* 開發區塊 Hover 效果 */
         .dev-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(40, 167, 69, 0.1);
+            box-shadow: 0 20px 40px rgba(40, 167, 69, 0.1);
             border-color: var(--primary-green);
             border-bottom: 6px solid var(--primary-green);
         }
 
         .category-card .icon { font-size: 50px; margin-bottom: 20px; }
         .category-card h2 { font-size: 24px; margin: 10px 0; color: #1a1a1a; }
-        .category-card p { color: #666; font-size: 15px; margin-bottom: 25px; min-height: 72px; }
+        .category-card p { color: var(--text-muted); font-size: 15px; margin-bottom: 25px; min-height: 72px; }
 
-        /* 標籤雲 */
-        .tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: auto; }
-        .tag {
-            font-size: 12px; font-weight: bold;
-            padding: 4px 12px; border-radius: 20px; background: #eee; color: #555;
-        }
+        .inner-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: auto; }
+        .inner-tag { font-size: 12px; padding: 4px 12px; border-radius: 20px; background: #eee; color: #555; }
 
-        /* 響應式：手機版改為單欄 */
         @media (max-width: 768px) {
             .category-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 30px; }
+            .intro-text { font-size: 16px; }
         }
 
         .footer { text-align: center; color: #999; font-size: 14px; margin-top: 80px; padding-bottom: 40px; }
@@ -82,13 +119,24 @@
 <body>
 
 <div class="hero-section">
-    <h1>技術專案錦集</h1>
+    <h1>HELEN YUN</h1>
+    <p class="intro-text">
+        <span class="highlight">後端開發&軟體自動化測試雙棲</span><br>
+        專注於 .NET 系統開發與異質系統整合<br>
+        擅長自動化測試架構設計，以技術確保產品的高品質交付
+    </p>
   
-    <div style="display: flex; justify-content: center; gap: 10px;">
-        <span class="tag"># C# .NET</span>
-        <span class="tag"># System Integration</span>
-        <span class="tag"># Automation QA</span>
-        <span class="tag"># Git & DevOps</span>
+    <div class="hero-tags">
+        <span class="tag-dev"># .NET Core / C#</span>
+        <span class="tag-dev"># Backend Development</span>
+        <span class="tag-dev"># System Integration</span>
+        <span class="tag-qa"># QA Automation</span>
+        <span class="tag-qa"># SDD Framework</span>
+        <span class="tag-qa"># CI/CD Pipeline</span>
+    </div>
+
+    <div class="cta-group">
+        <a href="mailto:cshsyu@gmail.com" class="btn btn-outline">📧 聯繫我</a>
     </div>
 </div>
 
@@ -99,10 +147,10 @@
             <div class="icon">🔍</div>
             <h2>自動化測試 & 架構研發</h2>
             <p>SDD 測試框架搭建、AI 輔助腳本遷移技術，以及金流支付 E2E 自動化驗證流程。</p>
-            <div class="tags">
-                <span class="tag" style="background: #e7f3ff; color: #0056b3;">Playwright</span>
-                <span class="tag" style="background: #e7f3ff; color: #0056b3;">Spec-Driven</span>
-                <span class="tag" style="background: #e7f3ff; color: #0056b3;">CI/CD</span>
+            <div class="inner-tags">
+                <span class="inner-tag">Playwright</span>
+                <span class="inner-tag">Spec-Driven</span>
+                <span class="inner-tag">Jenkins</span>
             </div>
         </a>
 
@@ -110,14 +158,18 @@
             <div class="icon">💻</div>
             <h2>後端開發 & 系統整合</h2>
             <p>BPM 表單開發、SAP 異質系統資料對接，以及 Legacy 系統重構現代化專案。</p>
-            <div class="tags">
-                <span class="tag" style="background: #e9f7ef; color: #28a745;">.NET Core</span>
-                <span class="tag" style="background: #e9f7ef; color: #28a745;">SAP Adapter</span>
-                <span class="tag" style="background: #e9f7ef; color: #28a745;">SQL Server</span>
+            <div class="inner-tags">
+                <span class="inner-tag">.NET Core</span>
+                <span class="inner-tag">SQL Server</span>
+                <span class="inner-tag">SAP Adapter</span>
             </div>
         </a>
 
     </div>
+</div>
+
+<div class="footer">
+    © 2026 YaYu Sun. Built with Passion for Code & Quality.
 </div>
 
 </body>
